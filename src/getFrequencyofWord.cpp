@@ -14,42 +14,15 @@ Note: Dont modify original str or word,Just return count ,Spaces can also be par
 
 int count_word_in_str_way_1(char *str, char *word){
 	int i,count=0,k=0,check=0;
-	
-/*	for (i = 0; str[i] != '\0'; i++)
-	{
-		if (str[i] != word[k])
-			k = 0;
-
-		if (str[i] == word[k])
-		{
-			check++;
-			k++;
-		}
-		
-		if (check == k)
-		{
-			count++;
-			i -= k;
-			k = 0;
-		}
-
-	}
-
-
-	return count;*/
 	int len;
 	for (len = 0; word[len] != '\0'; len++);
 	for (i = 0; str[i] != '\0'; i++)
 	{
 		if (str[i] != word[k])
-		{
 			k = 0;
-		}
 
 		if (str[i] == word[k])
-		{
 			k++;
-		}
 
 		if (word[k] == '\0')
 		{
@@ -58,12 +31,13 @@ int count_word_in_str_way_1(char *str, char *word){
 			k = 0;
 			check = 0;
 		}
-
 	}
-
-
 	return count;
 }
+
+
+
+//recursion
 
 int word_count(char *str,char *word,int len,int w_index,int s_index,int count)
 {
